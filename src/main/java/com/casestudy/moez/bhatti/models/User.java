@@ -23,6 +23,9 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
     private List<Post> userPosts;
 
+    @OneToMany(mappedBy = "commentAuthor")
+    private List<Comment> userComments;
+
     public int getId() {
         return id;
     }

@@ -18,10 +18,19 @@ public class Comment {
     @Column(name = "created_at", nullable = false)
     private Date timestamp;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinTable(name = "post_comments",
+            joinColumns = @JoinColumn(name = "commentId"),
+            inverseJoinColumns = @JoinColumn(name = "postId")
+    )
     private Post post; //post that will contain the comment
 
-    private User user; //user that is the author of the comment
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_comments",
+            joinColumns = @JoinColumn(name = "commentId"),
+            inverseJoinColumns = @JoinColumn(name = "userId")
+    )
+    private User commentAuthor; //user that is the author of the comment
 
     public int getId() {
         return id;
@@ -40,11 +49,11 @@ public class Comment {
     }
 
     public User getUser() {
-        return user;
+        return commentAuthor;
     }
 
     public void setUser(User user) {
-        this.user = user;
+        this.commentAuthor = user;
     }
 
     public String getContent() {
