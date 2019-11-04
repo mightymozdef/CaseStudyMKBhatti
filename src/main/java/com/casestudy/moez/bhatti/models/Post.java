@@ -13,11 +13,17 @@ public class Post {
     @Column(name = "postId")
     private int id; //unique post id
 
+    @Column(name = "postTitle", nullable = false)
     private String title; //post title
 
+    @Column(name = "categoryId", nullable = false)
     private int categoryId; //the category this post belongs to
 
-    private int userId; //user that is the author of this post
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_posts",
+            joinColumns = @JoinColumn(name = "postId"),
+            inverseJoinColumns = @JoinColumn(name = "userId"))
+    private User postAuthor; //user that is the author of this post
 
     private String content; //this post's content
 
