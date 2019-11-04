@@ -45,7 +45,7 @@ class AuthoritiesId implements Serializable {
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "")
+    @JoinColumn(name = "username")
     private Credential credential;
 
     public String getAuthority() {

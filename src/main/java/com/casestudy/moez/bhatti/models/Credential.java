@@ -31,8 +31,8 @@ public class Credential {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "credential")
     private Set<Authorities> authorities = new HashSet<>();
 
-    @OneToOne(mappedBy = "userId")
-    @MapsId("userId")
+    @OneToOne
+    @JoinColumn(name = "userId", referencedColumnName = "userId")
     private User user;
 
     public String getUsername() {
