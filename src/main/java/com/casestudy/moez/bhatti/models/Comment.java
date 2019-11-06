@@ -1,7 +1,7 @@
 package com.casestudy.moez.bhatti.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 @Entity
@@ -13,11 +13,11 @@ public class Comment {
     @Column(name = "commentId")
     private int id;
 
-    @NotNull
+    @NotEmpty
     @Column(name = "content", nullable = false)
     private String content;
 
-    @NotNull
+    @NotEmpty
     @Column(name = "created_at", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date timestamp;

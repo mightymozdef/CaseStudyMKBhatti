@@ -1,7 +1,7 @@
 package com.casestudy.moez.bhatti.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 import java.util.List;
 
@@ -14,26 +14,26 @@ public class Post {
     @Column(name = "postId")
     private int id; //unique post id
 
-    @NotNull
+    @NotEmpty
     @Column(name = "postTitle", nullable = false)
     private String title; //post title
 
-    @NotNull
+    @NotEmpty
     @Column(name = "categoryId", nullable = false)
     private int categoryId; //the category this post belongs to
 
-    @NotNull
+    @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinTable(name = "user_posts",
             joinColumns = @JoinColumn(name = "postId"),
             inverseJoinColumns = @JoinColumn(name = "userId"))
     private User postAuthor; //user that is the author of this post
 
-    @NotNull
+    @NotEmpty
     @Column(name = "content", nullable = false)
     private String content; //this post's content
 
-    @NotNull
+    @NotEmpty
     @Column(name = "creation_timestamp", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date timestamp;

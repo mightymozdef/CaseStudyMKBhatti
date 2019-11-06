@@ -16,5 +16,6 @@
     </bean>
 
     <MVC:view-controller path="/login" view-name="login"/>
-<!--    <mvc:resources mapping="/images/*" location="/images/"/>-->
+    <mvc:resources mapping="/images/*" location="/images/"/>
+    <mvc:resources mapping="/css/*" location="/css/"/>
 </beans>

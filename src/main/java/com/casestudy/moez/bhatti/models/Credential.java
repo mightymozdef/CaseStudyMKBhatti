@@ -4,7 +4,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,18 +13,19 @@ import java.util.Set;
 public class Credential {
 
     @Id
+    @NotEmpty
     @Column(name = "username", nullable = false)
     private String username;
 
-    @NotNull
+    @NotEmpty
     @Column(name = "password", nullable = false)
     private String password;
 
-    @NotNull
+    @NotEmpty
     @Column(name = "name", nullable = false)
     private String name;
 
-    @NotNull
+    @NotEmpty
     @Column(name = "enabled", nullable = false)
     private boolean enabled;
 

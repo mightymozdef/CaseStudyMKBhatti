@@ -5,7 +5,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Entity
@@ -17,11 +17,11 @@ public class User {
     @Column(name = "userId")
     private int userId;
 
-    @NotNull
+    @NotEmpty
     @Column(name = "username", nullable = false, unique = true)
     private String name;
 
-    @NotNull
+    @NotEmpty
     @Email
     @Column(name = "email", nullable = false, unique = true)
     private String email;
