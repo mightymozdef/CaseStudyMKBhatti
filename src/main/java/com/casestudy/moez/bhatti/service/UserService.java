@@ -1,0 +1,17 @@
+package com.casestudy.moez.bhatti.service;
+
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+
+//    TODO - implement this method - can't use the UserDetailsService interface for this
+//    public UserDetails loadUserByUserId(Integer userId) throws UsernameNotFoundException {
+//
+//    }
+
+
+}

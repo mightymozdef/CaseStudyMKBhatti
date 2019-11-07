@@ -4,18 +4,19 @@
 <html>
 <head>
     <title>Welcome to CAReddit!</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/landing.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/landing.css">
 </head>
 <body>
 
-<%--<div id="foreground">--%>
-<%--    <button><a href="login">click here to go to login</a></button>--%>
-<%--</div>--%>
-
-<%--<div id="background">--%>
-<%--    <img src="<c:url value='/images/cars.jpg'/>" alt="https://unsplash.com/photos/A53o1drQS2k"/>--%>
-<%--</div>--%>
-
+<div class="background">
+    <img src="<c:url value='/resources/images/cars.jpg'/>" alt="https://unsplash.com/photos/A53o1drQS2k"/>
+    <form action="${pageContext.request.contextPath}/login" method="get">
+        <input type="button" class="login" placeholder="Login" value="Login"/>
+    </form>
+    <form action="${pageContext.request.contextPath}/signup" method="get">
+        <input type="button" class="signup" placeholder="SignUp" value="Sign Up"/>
+    </form>
+</div>
 
 </body>
 </html>

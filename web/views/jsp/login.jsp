@@ -7,26 +7,22 @@
 </head>
 <body>
 
-<form action=" <spring:url value='/loginAction' />" method="post">
-
+<form action=" <spring:url value='/loginAction'/>" method="post">
     <table>
         <tr>
             <td>Username:</td>
-            <td>
-                <label><input type="text" name="username"></label>
-            </td>
+            <td><input type="text" name="username"/></td>
         </tr>
         <tr>
             <td>Password:</td>
-            <td>
-                <label><input type="password" name="password"></label>
-            </td>
+            <td><input type="password" name="password"/></td>
         </tr>
         <tr>
-            <button type="submit">Login</button>
+            <td>
+                <button type="submit">Login</button>
+            </td>
         </tr>
     </table>
-
 </form>
 
 </body>
