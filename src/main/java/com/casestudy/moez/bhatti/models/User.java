@@ -15,10 +15,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userId")
-    private long userId;
+    private int userId;
 
     @NotEmpty
-    @Column(name = "username", nullable = false, unique = true)
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
     @NotEmpty
@@ -32,11 +32,11 @@ public class User {
     @OneToMany(mappedBy = "commentAuthor")
     private List<Comment> userComments;
 
-    public long getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 

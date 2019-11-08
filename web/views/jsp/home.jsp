@@ -1,23 +1,27 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
+
 <head>
-    <title>Welcome to CAReddit!</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/landing.css">
+    <title>CAReddit</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapCSS/bootstrap.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/landing.css" type="text/css">
+    <script src="${pageContext.request.contextPath}/resources/js/bootstrapJS/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
 
-<div class="background">
-    <img src="<c:url value='/resources/images/cars.jpg'/>" alt="https://unsplash.com/photos/A53o1drQS2k"/>
-    <form action="${pageContext.request.contextPath}/login" method="get">
-        <input type="button" class="login" placeholder="Login" value="Login"/>
-    </form>
-    <form action="${pageContext.request.contextPath}/signup" method="get">
-        <input type="button" class="signup" placeholder="SignUp" value="Sign Up"/>
-    </form>
+<div class="container-fluid">
+    <img class="img-fluid" src="<c:url value='/resources/images/cars.jpg'/>"
+         alt="https://unsplash.com/photos/A53o1drQS2k"/>
+    <a href="${pageContext.request.contextPath}/login">
+        <button class="login" value="login" name="Login">Login</button>
+    </a>
+    <a href="${pageContext.request.contextPath}/signup">
+        <button class="signup" value="signup" name="signup">Signup</button>
+    </a>
 </div>
 
-</body>
-</html>
-
+<%@include file="footer.jsp" %>

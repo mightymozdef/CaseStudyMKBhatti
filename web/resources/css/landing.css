@@ -1,16 +1,20 @@
 /*This CSS file will center two buttons for login and sign up - there will be a jumbotron added to this home page*/
 
-.background {
-    position: relative;
-    width: 100%;
+body {
+    min-width: 100%;
+    min-height: 100%;
+    background-size: 100% 100%;
+    background: url("/resources/images/cars.jpg") no-repeat;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
-.background img {
-    width: 100vw;
-    height: 100vh;
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.background .login {
+.container-fluid .login {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -22,7 +26,7 @@
     border-radius: 5px;
 }
 
-.background .signup {
+.container-fluid .signup {
     position: absolute;
     top: 60%;
     left: 50%;
@@ -34,6 +38,6 @@
     border-radius: 5px;
 }
 
-.background .login:hover, .background .signup:hover {
+.container-fluid .login:hover, .container-fluid .signup:hover {
     color: #0077FF;
 }

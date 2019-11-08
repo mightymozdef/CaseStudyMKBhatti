@@ -1,12 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Thanks For Stopping By! </title>
-</head>
-<body>
+<%@include file="header.jsp"%>
 
-<h1>You have been logged out!</h1>
+<h1 class="display-2">You have been logged out!</h1>
 
-
-</body>
-</html>
+<%@include file="footer.jsp"%>

@@ -13,17 +13,12 @@ import java.util.Set;
 public class Credential {
 
     @Id
-    @NotEmpty
     @Column(name = "username", nullable = false)
     private String username;
 
-    @NotEmpty
+    @NotEmpty(message = "Password cannot be empty/null")
     @Column(name = "password", nullable = false)
     private String password;
-
-    @NotEmpty
-    @Column(name = "name", nullable = false)
-    private String name;
 
     @NotEmpty
     @Column(name = "enabled", nullable = false)
@@ -50,14 +45,6 @@ public class Credential {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public boolean isEnabled() {
