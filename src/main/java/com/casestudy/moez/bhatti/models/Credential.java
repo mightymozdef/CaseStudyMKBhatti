@@ -13,7 +13,7 @@ import java.util.Set;
 public class Credential {
 
     @Id
-    @Column(name = "username", nullable = false)
+    @Column(name = "username")
     private String username;
 
     @NotEmpty(message = "Password cannot be empty/null")
