@@ -20,7 +20,7 @@
         <button class="login" value="login" name="Login">Login</button>
     </a>
     <a href="${pageContext.request.contextPath}/signup">
-        <button class="signup" value="signup" name="signup">Signup</button>
+        <button class="register" value="register" name="register">Register</button>
     </a>
 </div>
 

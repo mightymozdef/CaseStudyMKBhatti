@@ -1,4 +1,4 @@
-/*This CSS file will center two buttons for login and sign up - there will be a jumbotron added to this home page*/
+/* This CSS file will center two buttons for login and sign up */
 
 body {
     min-width: 100%;
@@ -26,7 +26,7 @@ body {
     border-radius: 5px;
 }
 
-.container-fluid .signup {
+.container-fluid .register {
     position: absolute;
     top: 60%;
     left: 50%;
@@ -38,6 +38,6 @@ body {
     border-radius: 5px;
 }
 
-.container-fluid .login:hover, .container-fluid .signup:hover {
+.container-fluid .login:hover, .container-fluid .register:hover {
     color: #0077FF;
 }

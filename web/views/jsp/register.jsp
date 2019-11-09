@@ -1,12 +1,5 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Create your user profile</title>
-</head>
-<body>
-<p>${message}</p>
+<%@include file="header.jsp" %>
+<h1 class="display-2">${message}</h1>
 <form:form id="registrationForm" modelAttribute="registrationFormObject"
            action="register" method="POST">
     <table>

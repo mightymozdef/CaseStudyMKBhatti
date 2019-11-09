@@ -11,15 +11,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-@Service("credentialService")
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
 public class CredentialService implements UserDetailsService {
 
     @Autowired
     CredentialRepository credentialRepository;
-
-    public boolean addCredential(Credential credential) {
-        return credentialRepository.save(credential) != null;
-    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -41,4 +40,28 @@ public class CredentialService implements UserDetailsService {
         return userBuilder.build();
 
     }
+
+    public List<Credential> getAllCredentials() {
+        List<Credential> credentials = new ArrayList<>();
+        credentialRepository.findAll().forEach(credentials::add);
+        return credentials;
+    }
+
+    public Credential getCredentialByUsername(String username) {
+        return credentialRepository.findByUsername(username);
+    }
+
+    public boolean addCredential(Credential credential) {
+        return credentialRepository.save(credential) != null;
+    }
+
+    public boolean updateCredential(Credential credential) {
+        return credentialRepository.save(credential) != null;
+    }
+
+    public void deleteCredential(Credential credential) {
+        credentialRepository.delete(credential);
+    }
+
+
 }
