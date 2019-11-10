@@ -32,7 +32,7 @@ public class CredentialService implements UserDetailsService {
         if (user != null) {
             userBuilder = org.springframework.security.core.userdetails.User.withUsername(username);
             userBuilder.password(credential.getPassword());
-            userBuilder.disabled(!credential.isEnabled());
+            userBuilder.disabled(false);
             userBuilder.authorities(credential.getAuthorities().stream().map(Authorities::getAuthority).toArray(String[]::new));
         } else {
             throw new UsernameNotFoundException("Credentials not found!");

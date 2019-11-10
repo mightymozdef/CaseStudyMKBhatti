@@ -12,6 +12,7 @@ import java.util.Set;
 @Table(name = "credentials")
 public class Credential {
 
+
     @Id
     @Column(name = "username")
     private String username;
@@ -20,14 +21,10 @@ public class Credential {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @NotEmpty
-    @Column(name = "enabled", nullable = false)
-    private boolean enabled;
-
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "credential")
     private Set<Authorities> authorities = new HashSet<>();
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId", referencedColumnName = "userId")
     private User user;
 
@@ -45,14 +42,6 @@ public class Credential {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
     }
 
     public Set<Authorities> getAuthorities() {

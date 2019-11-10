@@ -1,5 +1,5 @@
 <%@include file="header.jsp" %>
-<h1 class="display-2">${message}</h1>
+<h1 class="display-4">${message}</h1>
 <form:form id="registrationForm" modelAttribute="registrationFormObject"
            action="register" method="POST">
     <table>

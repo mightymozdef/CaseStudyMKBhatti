@@ -26,10 +26,10 @@ public class User {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @OneToMany(mappedBy = "postAuthor", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
+    @OneToMany(mappedBy = "postAuthor", fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     private List<Post> userPosts;
 
-    @OneToMany(mappedBy = "commentAuthor")
+    @OneToMany(mappedBy = "commentAuthor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Comment> userComments;
 
     public int getUserId() {

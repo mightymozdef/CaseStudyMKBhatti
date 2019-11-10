@@ -13,7 +13,7 @@ public class Authorities {
     private String authority;
 
     @Id
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "username")
     private Credential credential;
 

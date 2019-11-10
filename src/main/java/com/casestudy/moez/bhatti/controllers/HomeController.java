@@ -9,9 +9,15 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
     @RequestMapping("/")
-    public ModelAndView getHomePage() {
-        return new ModelAndView("home");
+    public ModelAndView getLandingPage() {
+        return new ModelAndView("welcome");
     }
 
+    @RequestMapping("/home")
+    public ModelAndView getHomePage() {
+        ModelAndView mav = new ModelAndView("home");
+//        mav.addObject()
+        return mav;
+    }
 
 }

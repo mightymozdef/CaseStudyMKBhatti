@@ -2,6 +2,7 @@ package com.casestudy.moez.bhatti.controllers;
 
 import com.casestudy.moez.bhatti.models.Authorities;
 import com.casestudy.moez.bhatti.models.Credential;
+import com.casestudy.moez.bhatti.models.User;
 import com.casestudy.moez.bhatti.service.CredentialService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -37,34 +38,35 @@ public class LoginController {
                                        RedirectAttributes redirect) {
         ModelAndView mav = null;
         Credential cred = credentialService.getCredentialByUsername(credential.getUsername());
+//        Credential cred = credential;
 
-        if (br.hasErrors() || cred == null) {
+        if (br.hasErrors() || credential == null) {
             br.getAllErrors().forEach(System.out::println);
             mav = new ModelAndView("register");
             mav.addObject("message", "There was an error registering your account - please try again.");
         } else {
             if (credential.getPassword().equals(confPassword)) {
+                User newUser = credential.getUser();
+
                 cred = new Credential();
                 cred.setUsername(credential.getUsername());
                 cred.setPassword(new BCryptPasswordEncoder().encode(credential.getPassword()));
-                cred.setEnabled(credential.isEnabled());
+                cred.setUser(newUser);
 
                 Authorities authority = new Authorities();
                 authority.setAuthority("user");
                 cred.getAuthorities().add(authority);
+                authority.setCredential(cred);
 
                 credentialService.addCredential(cred);
                 mav = new ModelAndView("registrationConfirmation");
                 mav.addObject("message", String.format("Credential successfully created for %s", cred.getUsername()));
+            } else {
+                redirect.addFlashAttribute("message", "Something went wrong! Please try registering again.");
+                mav = new ModelAndView("redirect:/register");
             }
         }
         return mav;
     }
-
-    @RequestMapping("/login")
-    public ModelAndView getLoginPage() {
-        return new ModelAndView("login");
-    }
-
 
 }
