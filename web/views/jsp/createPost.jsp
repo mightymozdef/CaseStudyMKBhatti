@@ -1,5 +1,7 @@
 <%@include file="header.jsp" %>
 
+<p>${message}</p>
+
 <form:form id="postForm" modelAttribute="postFormObject" action="createPost" method="POST">
     <table>
         <tr>

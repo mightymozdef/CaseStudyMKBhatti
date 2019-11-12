@@ -1,7 +1,9 @@
 package com.casestudy.moez.bhatti.controllers;
 
 
+import com.casestudy.moez.bhatti.models.Credential;
 import com.casestudy.moez.bhatti.models.Post;
+import com.casestudy.moez.bhatti.models.User;
 import com.casestudy.moez.bhatti.repository.CredentialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -36,14 +38,23 @@ public class PostController {
     public ModelAndView getPostCreationPage(Principal principal) {
         ModelAndView mav = new ModelAndView("createPost");
         mav.addObject("postFormObject", new Post());
+        Credential credential = credentialRepository.findByUsername(principal.getName());
+        mav.addObject("user", credential.getUser());
         return mav;
     }
 
     @RequestMapping(value = "postAction", method = RequestMethod.POST)
     public ModelAndView processForm(@Valid @ModelAttribute("postFormObject") Post post,
-                                    BindingResult br, RedirectAttributes redirect) {
+                                    Principal principal, BindingResult br, RedirectAttributes redirect) {
         ModelAndView mav = null;
+        if (br.hasErrors() || post == null) {
+            redirect.addFlashAttribute("message", "There was an error creating your post - please try again.");
+            mav = new ModelAndView("redirect:/createPost");
+        } else {
+            User postAuthor = credentialRepository.findByUsername(principal.getName()).getUser();
 
+        }
+        return mav;
     }
 
 }
