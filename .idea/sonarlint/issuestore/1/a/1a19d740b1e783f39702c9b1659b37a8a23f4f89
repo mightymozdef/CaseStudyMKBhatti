@@ -1,0 +1,11 @@
+
+hsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(Ό’'8®¤ακε-
+csquid:S4684'"@Replace this persistent entity with a simple POJO or DTO object.(’δΣΘόÿÿÿÿ8®¤ακε-
+[squid:S3752">Add a "method" parameter to this "@RequestMapping" annotation.(ª£΅8®¤ακε-
+Usquid:S2589/"8Remove this expression which always evaluates to "false"(έψΘM8®¤ακε-
+ksquid:S11922"HDefine a constant instead of duplicating this literal "message" 3 times.(΅‘—Θϊÿÿÿÿ8®¤ακε-
+Vsquid:S1854,"8Remove this useless assignment to local variable "cred".(«ÿΧ¥8®¤ακε-
+hsquid:S4488&"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(£΄­8®¤ακε-
+nsquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(²Τΰεύÿÿÿÿ8®¤ακε-
+V
+squid:S1060"9Replace this use of System.out or System.err by a logger.(•Ρ¤8®¤ακε-

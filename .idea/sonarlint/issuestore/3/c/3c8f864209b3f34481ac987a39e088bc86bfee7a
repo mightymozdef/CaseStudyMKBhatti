@@ -1,0 +1,5 @@
+
+\squid:S3752#">Add a "method" parameter to this "@RequestMapping" annotation.(ÔÈ£8ÍŸÕõå-
+Ksquid:S1481-"(Remove this unused "mav" local variable.(°‰¡•şÿÿÿÿ8õöõå-
+^squid:S4684+"@Replace this persistent entity with a simple POJO or DTO object.(ƒŒ¥Ë8û÷òõå-
+hsquid:S4488*"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(åÈã8Ô¾Øõå-

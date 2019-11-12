@@ -1,0 +1,4 @@
+
+ksquid:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(èÐØÙþÿÿÿÿ8‡«÷èå-
+asquid:S3752">Add a "method" parameter to this "@RequestMapping" annotation.(Í¹‹£øÿÿÿÿ8‡«÷èå-
+~squid:S1488"[Immediately return this expression instead of assigning it to the temporary variable "mav".(ÒŠå˜þÿÿÿÿ8‡«÷èå-
