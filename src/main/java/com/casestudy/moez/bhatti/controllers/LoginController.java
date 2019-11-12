@@ -3,6 +3,7 @@ package com.casestudy.moez.bhatti.controllers;
 import com.casestudy.moez.bhatti.models.Authorities;
 import com.casestudy.moez.bhatti.models.Credential;
 import com.casestudy.moez.bhatti.models.User;
+import com.casestudy.moez.bhatti.repository.CredentialRepository;
 import com.casestudy.moez.bhatti.service.CredentialService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 
 @Controller
 public class LoginController {
@@ -23,8 +25,10 @@ public class LoginController {
     @Autowired
     CredentialService credentialService;
 
-    @RequestMapping("/register")
+    @Autowired
+    CredentialRepository credentialRepository;
 
+    @RequestMapping("/register")
     public ModelAndView getSignUpPage() {
         ModelAndView mav = new ModelAndView("register");
         mav.addObject("registrationFormObject", new Credential());
@@ -47,6 +51,9 @@ public class LoginController {
         } else {
             if (credential.getPassword().equals(confPassword)) {
                 User newUser = credential.getUser();
+//                newUser.setEmail(email);
+                newUser.setUserPosts(new ArrayList<>());
+                newUser.setUserComments(new ArrayList<>());
 
                 cred = new Credential();
                 cred.setUsername(credential.getUsername());
@@ -68,5 +75,6 @@ public class LoginController {
         }
         return mav;
     }
+
 
 }
