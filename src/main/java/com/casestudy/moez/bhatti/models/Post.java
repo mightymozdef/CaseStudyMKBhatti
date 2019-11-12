@@ -26,7 +26,7 @@ public class Post {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinTable(name = "user_posts",
             joinColumns = @JoinColumn(name = "postId"),
-            inverseJoinColumns = @JoinColumn(name = "username"))
+            inverseJoinColumns = @JoinColumn(name = "userId"))
     private User postAuthor; //user that is the author of this post
 
     @NotEmpty

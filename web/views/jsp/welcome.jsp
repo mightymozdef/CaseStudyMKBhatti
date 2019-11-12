@@ -1,6 +1,12 @@
 <%@include file="header.jsp" %>
 
-<h1>IF YOU ARE LOGGED IN YOU WILL SEE THIS</h1>
-${user.name}
+
+<h3 class="display-2">Welcome ${credential.username}!</h3>
+<c:set value="${user.userPosts}" var="userPosts"/>
+<c:set value="${user.userComments}" var="userComments"/>
+<c:if test="${userPosts.size() == 0}">
+    <p>You don't have any posts.</p>
+    <a href="/"
+</c:if>
 
 <%@include file="footer.jsp" %>
