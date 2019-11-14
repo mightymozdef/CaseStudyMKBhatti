@@ -34,7 +34,7 @@ public class PostController {
         binder.registerCustomEditor(Date.class, "timestamp", new CustomDateEditor(sdf, false));
     }
 
-    @RequestMapping("/createPost")
+    @RequestMapping(value = "/createPost", method = RequestMethod.GET)
     public ModelAndView getPostCreationPage(Principal principal) {
         ModelAndView mav = new ModelAndView("createPost");
         mav.addObject("postFormObject", new Post());
@@ -43,16 +43,25 @@ public class PostController {
         return mav;
     }
 
-    @RequestMapping(value = "postAction", method = RequestMethod.POST)
+    @RequestMapping(value = "processPost", method = RequestMethod.POST)
     public ModelAndView processForm(@Valid @ModelAttribute("postFormObject") Post post,
-                                    Principal principal, BindingResult br, RedirectAttributes redirect) {
+                                    BindingResult br, Principal principal, RedirectAttributes redirectAttributes) {
+        System.out.println("Entering post action after pressing submit on createPost form");
         ModelAndView mav = null;
         if (br.hasErrors() || post == null) {
-            redirect.addFlashAttribute("message", "There was an error creating your post - please try again.");
+            br.getAllErrors().forEach(System.out::println);
+            redirectAttributes.addFlashAttribute("message", "There was an error creating your post - please try again.");
             mav = new ModelAndView("redirect:/createPost");
         } else {
             User postAuthor = credentialRepository.findByUsername(principal.getName()).getUser();
-
+            Post newPost = new Post();
+            newPost.setCategoryId(2);
+            newPost.setPostAuthor(postAuthor);
+            newPost.setContent(post.getContent());
+            newPost.setTitle(post.getTitle());
+            postAuthor.getUserPosts().add(newPost);
+            mav = new ModelAndView("welcome");
+            mav.addObject("message", "Post successfully created!");
         }
         return mav;
     }

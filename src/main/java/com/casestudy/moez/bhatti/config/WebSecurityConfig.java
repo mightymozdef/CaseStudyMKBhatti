@@ -43,7 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().loginPage("/login").loginProcessingUrl("/loginAction").defaultSuccessUrl("/welcome", true).permitAll()
                 .and()
-                .logout().logoutSuccessUrl("/welcome").permitAll()
+                .logout().logoutSuccessUrl("/").permitAll()
                 .and()
                 .exceptionHandling().accessDeniedPage("/403")
                 .and()

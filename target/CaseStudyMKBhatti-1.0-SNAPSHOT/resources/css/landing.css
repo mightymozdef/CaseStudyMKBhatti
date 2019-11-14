@@ -14,7 +14,7 @@ body {
     padding-right: 0;
 }
 
-.container-fluid .login {
+.container-fluid div .login {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -26,7 +26,7 @@ body {
     border-radius: 5px;
 }
 
-.container-fluid .register {
+.container-fluid div .register {
     position: absolute;
     top: 60%;
     left: 50%;

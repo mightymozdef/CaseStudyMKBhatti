@@ -1,0 +1,11 @@
+As a user, I want to be able to log in to the website so that I can interact with users rather than just being able to see posts and comments.
+As a user, I want to make posts so that I can share my experiences with others.
+As a user, I want to be able to view other users' posts so that I can read about experiences from other users.
+As a user, I want to be able to comment on posts so that I can interact with other users.
+As a user, I want to be able to make a custom profile picture so that I can distinguish myself from others.
+As a user, I want to be able to create a status so that other users can see what I've written down for the aforementioned status.
+
+As an admin, I want to be able to moderate posts so that I can prevent users from breaking rules or posting inappropriate things.
+As an admin, I want to be able to comment on posts so that I can interact with other users and moderate the comments.
+As an admin, I want to be able to view other users' posts so that I can moderate those posts to see if users are breaking rules.
+As an admin, I want to be able to make posts so that I can update other users on potential changes to rules.

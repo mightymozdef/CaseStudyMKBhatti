@@ -229,3 +229,15 @@ F
 web/views/jsp/menu.jsp,c\5\c5709ba21c747760f6ddcf855c3645b7a6eeb598
 D
 .settings/.jsdtscope,9\9\99d56a0536de7ba73be3bac0ffb18569b8d71ad6
+O
+web/views/jsp/createComment.jsp,6\e\6e8f21c81c810ad48a5a30a60674de8b3b19f235
+k
+;src/main/java/com/casestudy/moez/bhatti/dao/CommentDao.java,8\d\8d80f3ae876cac41e9356cddd03ce63a1b75f98a
+h
+8src/main/java/com/casestudy/moez/bhatti/dao/PostDao.java,f\f\ff6458cd8d56cb50d508d31c1b5f1838396b7ad4
+h
+8src/main/java/com/casestudy/moez/bhatti/dao/UserDao.java,a\4\a47573e063422aa13803445a712af39e2f5bb4ce
+n
+>src/main/java/com/casestudy/moez/bhatti/dao/CredentialDao.java,e\8\e8eb7cfe4d58b1ee8cbae1b01148d7326d9228e6
+k
+;Submissions/Documentation/CaseStudyMKBhatti_UserStories.txt,7\8\78c0f52b68373c64822e99bcd47230190d603e5a

@@ -17,11 +17,11 @@ public class User {
     @Column(name = "userId")
     private int userId;
 
-    @NotEmpty
-    @Column(name = "name", nullable = false, unique = true)
+    @NotEmpty(message = "user's name cannot be empty.")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @NotEmpty
+    @NotEmpty(message = "user email cannot be empty and must be unique")
     @Email
     @Column(name = "email", nullable = false, unique = true)
     private String email;

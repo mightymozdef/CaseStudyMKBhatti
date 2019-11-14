@@ -42,7 +42,6 @@ public class LoginController {
                                        RedirectAttributes redirect) {
         ModelAndView mav = null;
         Credential cred = credentialService.getCredentialByUsername(credential.getUsername());
-//        Credential cred = credential;
 
         if (br.hasErrors() || credential == null) {
             br.getAllErrors().forEach(System.out::println);
@@ -51,7 +50,6 @@ public class LoginController {
         } else {
             if (credential.getPassword().equals(confPassword)) {
                 User newUser = credential.getUser();
-//                newUser.setEmail(email);
                 newUser.setUserPosts(new ArrayList<>());
                 newUser.setUserComments(new ArrayList<>());
 

@@ -1,9 +1,7 @@
 package com.casestudy.moez.bhatti.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @IdClass(CommentLikeId.class)
@@ -20,11 +18,6 @@ public class CommentLike {
     @JoinColumn(name = "commentLikeCommentId", referencedColumnName = "commentId")
     private Comment commentLikeComment;
 
-    @NotNull
-    @Column(name = "commentLikeTimestamp", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date timestamp;
-
     public User getCommentLikeUser() {
         return commentLikeUser;
     }
@@ -41,13 +34,6 @@ public class CommentLike {
         this.commentLikeComment = commentLikeComment;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
 }
 
 class CommentLikeId implements Serializable {
@@ -64,11 +50,6 @@ class CommentLikeId implements Serializable {
     @JoinColumn(name = "commentLikeCommentId", referencedColumnName = "commentId")
     private Comment commentLikeComment;
 
-    @NotNull
-    @Column(name = "commentLikeTimestamp", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date timestamp;
-
     public User getCommentLikeUser() {
         return commentLikeUser;
     }
@@ -85,11 +66,4 @@ class CommentLikeId implements Serializable {
         this.commentLikeComment = commentLikeComment;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
 }

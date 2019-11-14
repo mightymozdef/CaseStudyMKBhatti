@@ -1,10 +1,15 @@
 <%@include file="header.jsp" %>
 
 
-<h1 class="display-2">${message}</h1>
+<div class="jumbotron jumbotron-fluid"
+     style="display: flex; min-height: 100%; min-width: 100%; justify-content: center; align-items: center; align-content: center; ">
+    <h5 class="display-4">${message}</h5>
+    <div>
+        <a href="${pageContext.request.contextPath}/login">
+            <button class="btn-danger" value="login" name="Login">Login</button>
+        </a>
+    </div>
+</div>
 
-<a href="${pageContext.request.contextPath}/login">
-    <button class="btn-danger" value="login" name="Login">Login</button>
-</a>
 
 <%@include file="footer.jsp" %>

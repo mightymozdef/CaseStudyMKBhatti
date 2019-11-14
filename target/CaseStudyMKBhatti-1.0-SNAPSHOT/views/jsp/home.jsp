@@ -16,12 +16,14 @@
 <div class="container-fluid">
     <img class="img-fluid" src="<c:url value='/resources/images/cars.jpg'/>"
          alt="https://unsplash.com/photos/A53o1drQS2k"/>
-    <a href="${pageContext.request.contextPath}/login">
-        <button class="login" value="login" name="Login">Login</button>
-    </a>
-    <a href="${pageContext.request.contextPath}/register">
-        <button class="register" value="register" name="register">Register</button>
-    </a>
+    <div class="jumbotron jumbotron-fluid">
+        <a href="${pageContext.request.contextPath}/login">
+            <button class="login" value="login" name="Login">Login</button>
+        </a>
+        <a href="${pageContext.request.contextPath}/register">
+            <button class="register" value="register" name="register">Register</button>
+        </a>
+    </div>
 </div>
 
 <%@include file="footer.jsp" %>

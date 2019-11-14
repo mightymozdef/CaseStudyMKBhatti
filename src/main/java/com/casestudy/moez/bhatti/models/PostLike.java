@@ -1,9 +1,10 @@
 package com.casestudy.moez.bhatti.models;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Timestamp;
 
 @Entity
 @IdClass(PostLikeId.class)
@@ -20,10 +21,9 @@ public class PostLike {
     @JoinColumn(name = "postLikePostId", referencedColumnName = "postId")
     private Post postLikePost;
 
-    @NotNull
-    @Column(name = "creation_timestamp", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date timestamp;
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private Timestamp timestamp;
 
     public User getPostLikeUser() {
         return postLikeUser;
@@ -41,11 +41,11 @@ public class PostLike {
         this.postLikePost = postLikePost;
     }
 
-    public Date getTimestamp() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
 }
@@ -64,10 +64,6 @@ class PostLikeId implements Serializable {
     @JoinColumn(name = "postLikePostId", referencedColumnName = "postId")
     private Post postLikePost;
 
-    @NotNull
-    @Column(name = "creation_timestamp", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date timestamp;
 
     public User getPostLikeUser() {
         return postLikeUser;
@@ -85,11 +81,4 @@ class PostLikeId implements Serializable {
         this.postLikePost = postLikePost;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
 }

@@ -2,7 +2,6 @@ package com.casestudy.moez.bhatti.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import java.util.Date;
 
 @Entity
 @Table(name = "comments")
@@ -13,14 +12,9 @@ public class Comment {
     @Column(name = "commentId")
     private int id;
 
-    @NotEmpty
+    @NotEmpty(message = "Comment content cannot be empty")
     @Column(name = "content", nullable = false)
     private String content;
-
-    @NotEmpty
-    @Column(name = "created_at", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date timestamp;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinTable(name = "post_comments",
@@ -68,11 +62,4 @@ public class Comment {
         this.content = content;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
 }

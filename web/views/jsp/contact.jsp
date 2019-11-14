@@ -1,9 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Contact Us</title>
-</head>
-<body>
+<%@include file="header.jsp" %>
 
-</body>
-</html>
+<div class="jumbotron jumbotron-fluid d-flex justify-content-center">
+    <p>Contact Info - Coming Soon!</p>
+</div>
+
+
+<%@include file="footer.jsp" %>
